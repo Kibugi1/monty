@@ -19,6 +19,7 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct stack_s
 {
 	int n;
@@ -34,6 +35,7 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct instruction_s
 {
 	char *opcode;
@@ -51,7 +53,9 @@ typedef struct instruction_s
  *
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO.
+ 
  */
+
 typedef struct globals
 {
 	int lifo;
@@ -64,7 +68,7 @@ typedef struct globals
 
 extern global_t glob_v;
 
-/**opcode instructions*/
+
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **head, unsigned int nline);
@@ -83,20 +87,12 @@ void pchar(stack_t **head, unsigned int nline);
 void rotr(stack_t **head, unsigned int nline);
 void rotl(stack_t **head, unsigned int nline);
 
-
-/**get function*/
 void(*opcodes_get(char *opcode))(stack_t **stack, unsigned int line_number);
-
-/**doubly linked list functions*/
 stack_t *add_dnodeint(stack_t **head, const int n);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
-
-/**str functions */
 int _sch(char *s, char c);
 char *_strtoky(char *s, char *d);
 int _strcmp(char *s1, char *s2);
-
-/* main*/
 void free_glob_v(void);
 #endif
